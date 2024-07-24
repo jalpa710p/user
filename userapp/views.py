@@ -10,14 +10,12 @@ def login(request):
         username = request.POST.get('username')
         password = request.POST.get('password')
 
-        # Authenticate user
         user = authenticate(username=username, password=password)
         if user is not None:
             # User authentication successful, login the user
             login(request, user)
             return redirect('home')  # Redirect to home page or any other page after login
         else:
-            # User authentication failed, handle the case
             error_message = "Invalid username or password. Please try again."
             return render(request, 'lgform.html', {'error_message': error_message})
 

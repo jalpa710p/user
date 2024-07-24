@@ -4,31 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Registration Form</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <div style="max-width: 400px; margin: 20px auto; padding: 20px; border: 1px solid #ccc; border-radius: 5px;">
-        <form action="#" method="post">
-            {% csrf_token %}
-            <div style="margin-bottom: 20px;">
-                <label for="username" style="display: block; font-weight: bold; margin-bottom: 5px;">Username:</label>
-                <input type="text" id="username" name="username" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; font-size: 16px;">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card mt-5">
+                    <div class="card-body">
+                        <h2 class="card-title text-center">User Registration</h2>
+                        <form action="#" method="post">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label for="username">Username:</label>
+                                <input type="text" class="form-control" id="username" name="username" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number:</label>
+                                <input type="tel" class="form-control" id="phone" name="phone_number" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email:</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password:</label>
+                                <input type="password" class="form-control" id="password" name="password" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                        </form>
+                    </div>
+                </div>
             </div>
-            <div style="margin-bottom: 20px;">
-                <label for="phone" style="display: block; font-weight: bold; margin-bottom: 5px;">Phone Number:</label>
-                <input type="tel" id="phone" name="phone_number" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; font-size: 16px;">
-            </div>
-            <div style="margin-bottom: 20px;">
-                <label for="email" style="display: block; font-weight: bold; margin-bottom: 5px;">Email:</label>
-                <input type="email" id="email" name="email" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; font-size: 16px;">
-            </div>
-            <div style="margin-bottom: 20px;">
-                <label for="password" style="display: block; font-weight: bold; margin-bottom: 5px;">Password:</label>
-                <input type="password" id="password" name="password" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; font-size: 16px;">
-            </div>
-            <div style="margin-bottom: 20px;">
-                <input type="submit" value="Submit" style="width: 100%; padding: 10px; border: none; border-radius: 5px; background-color: #007bff; color: #fff; font-size: 16px; cursor: pointer;">
-            </div>
-        </form>
+        </div>
     </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
